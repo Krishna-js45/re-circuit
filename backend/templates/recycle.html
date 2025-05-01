@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Recycle - ReCircuit</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}">
+</head>
+<body>
+    <div class="navbar">
+        <a href="/">Home</a>
+        <a href="/store">Store</a>
+        <a href="/projects">Projects</a>
+        <a href="/login">Login</a>
+        <a href="/dashboard">Dashboard</a>
+    </div>
+    
+    <div class="container">
+        <h1 class="title">♻️ Start Recycling</h1>
+        <p class="intro-text">Help us make the world cleaner by recycling your e-waste! Just follow the steps below to get started:</p>
+
+        <div class="steps">
+            <h2>Steps to Recycle Your E-Waste:</h2>
+            <ol>
+                <li><strong>Step 1:</strong> Identify the e-waste you want to recycle (e.g., old phones, laptops, batteries, etc.).</li>
+                <li><strong>Step 2:</strong> Select the appropriate category for your item.</li>
+                <li><strong>Step 3:</strong> Upload the details of your e-waste item, including images and descriptions.</li>
+                <li><strong>Step 4:</strong> Get the best solution for your recycling needs.</li>
+                <li><strong>Step 5:</strong> Complete the recycling process and track your item.</li>
+            </ol>
+        </div>
+
+        <!-- Form for uploading e-waste details -->
+        <div class="upload-section">
+            <h3 class="form-title">Upload Your E-Waste Details</h3>
+            <form action="/upload-ewaste" method="post" enctype="multipart/form-data" class="ewaste-form">
+                <label for="item_name">Item Name:</label>
+                <input type="text" id="item_name" name="item_name" placeholder="e.g., Old Laptop" required><br>
+
+                <label for="item_category">Category:</label>
+                <select id="item_category" name="item_category" required>
+                    <option value="electronics">Electronics</option>
+                    <option value="batteries">Batteries</option>
+                    <option value="phones">Phones</option>
+                    <option value="computers">Computers</option>
+                    <option value="other">Other</option>
+                </select><br>
+
+                <label for="item_image">Upload Image:</label>
+                <input type="file" id="item_image" name="item_image" required><br>
+
+                <label for="item_description">Item Description:</label><br>
+                <textarea id="item_description" name="item_description" rows="4" cols="50" placeholder="Describe the item in detail" required></textarea><br>
+
+                <button type="submit" class="btn">Submit E-Waste</button>
+            </form>
+        </div>
+
+        <div class="solutions-section">
+            <h3 class="solutions-title">Get Unique Recycling Solutions</h3>
+            <p>We provide tailored solutions for your e-waste. Click the button below to get the best recycling methods for your items.</p>
+            <button class="btn" onclick="window.location.href='/recycling-solutions'">Get Solutions</button>
+        </div>
+    </div>
+</body>
+</html>

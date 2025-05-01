@@ -1,0 +1,65 @@
+<!-- Same nav and styles as above -->
+<div class="container">
+    <h1>🛒 Your Cart</h1>
+    <div class="cart-items" id="cartItems"></div>
+    <h3>Total: ₹<span id="totalPrice">0</span></h3>
+    <button class="btn" onclick="checkout()">Proceed to Checkout</button>
+</div>
+
+<script>
+    function loadCart() {
+        let cart = JSON.parse(localStorage.getItem('cart')) || [];
+        const cartDiv = document.getElementById('cartItems');
+        let total = 0;
+        cartDiv.innerHTML = '';
+
+        cart.forEach(item => {
+            total += item.price * item.count;
+            const div = document.createElement('div');
+            div.className = "product-card";
+            div.innerHTML = `
+                <h3>${item.name}</h3>
+                <p>Price: ₹${item.price}</p>
+                <p>
+                    Quantity: 
+                    <button class="btn" onclick="changeQuantity('${item.name}', -1)">-</button> 
+                    ${item.count} 
+                    <button class="btn" onclick="changeQuantity('${item.name}', 1)">+</button>
+                </p>
+                <p>Subtotal: ₹${item.count * item.price}</p>
+                <button class="btn" onclick="removeItem('${item.name}')">Remove</button>
+            `;
+            cartDiv.appendChild(div);
+        });
+
+        document.getElementById('totalPrice').textContent = total;
+        document.getElementById('cartCount').textContent = cart.reduce((t, i) => t + i.count, 0);
+    }
+
+    function changeQuantity(name, delta) {
+        let cart = JSON.parse(localStorage.getItem('cart')) || [];
+        let item = cart.find(i => i.name === name);
+        if (item) {
+            item.count += delta;
+            if (item.count <= 0) {
+                cart = cart.filter(i => i.name !== name);
+            }
+            localStorage.setItem('cart', JSON.stringify(cart));
+            loadCart();
+        }
+    }
+
+    function removeItem(name) {
+        let cart = JSON.parse(localStorage.getItem('cart')) || [];
+        cart = cart.filter(i => i.name !== name);
+        localStorage.setItem('cart', JSON.stringify(cart));
+        loadCart();
+    }
+
+    function checkout() {
+        alert("✅ Checkout process coming soon.");
+    }
+
+    window.onload = loadCart;
+</script>
+

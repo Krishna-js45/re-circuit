@@ -1,0 +1,133 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ReCircuit - Dashboard</title>
+    <link rel="stylesheet" href="/static/css/style.css">
+    <style>
+        body {
+            font-family: 'Segoe UI', sans-serif;
+            background-color: #000000;
+            margin: 0;
+            padding: 0;
+            transition: all 0.3s ease-in-out;
+        }
+
+        .navbar {
+            background-color: #000000;
+            padding: 15px 30px;
+            display: flex;
+            gap: 20px;
+            box-shadow: 0 2px 6px rgba(0, 0, 0, 0.1);
+            transition: background 0.3s ease;
+        }
+
+        .navbar a {
+            text-decoration: none;
+            color: #00ff08;
+            font-weight: 500;
+            transition: color 0.3s ease;
+        }
+
+        .navbar a:hover {
+            color: #000000;
+        }
+
+        .container {
+            max-width: 960px;
+            margin: 40px auto;
+            padding: 0 20px;
+        }
+
+        h1 {
+            font-size: 2.2rem;
+            margin-bottom: 10px;
+        }
+
+        p {
+            font-size: 1.1rem;
+            color: #555;
+        }
+
+        .card {
+            background: #292929;
+            padding: 25px;
+            margin-top: 30px;
+            border-radius: 12px;
+            box-shadow: 0 3px 10px rgba(0, 0, 0, 0.08);
+            transition: transform 0.3s ease;
+        }
+
+        .card:hover {
+            transform: translateY(-5px);
+        }
+
+        .btn {
+            display: inline-block;
+            background-color: #00ff04;
+            color: white;
+            padding: 10px 18px;
+            border-radius: 8px;
+            text-decoration: none;
+            margin-right: 10px;
+            margin-top: 10px;
+            transition: background-color 0.3s ease;
+        }
+
+        .btn:hover {
+            background-color: #000000;
+        }
+
+        ul {
+            padding-left: 18px;
+        }
+
+        ul li {
+            margin-bottom: 8px;
+        }
+    </style>
+</head>
+<body>
+    <div class="navbar">
+        <a href="/">Home</a>
+        <a href="/store">Store</a>
+        <a href="/projects">Projects</a>
+        <a href="/login">Login</a>
+        <a href="/dashboard">Dashboard</a>
+    </div>
+
+    <div class="container">
+        <h1>📊 Welcome to Your Dashboard</h1>
+        <p>Manage your activity, track your contributions, and access tools to recycle smarter.</p>
+
+        <div class="card">
+            <h2>👤 Profile Summary</h2>
+            <p><strong>Your Name:</strong> </p>
+            <p><strong>Your Email:</strong></p>
+            <p><strong>Member Since:</strong> </p>
+        </div>
+
+        <div class="card">
+            <h2>📦 Your Activity</h2>
+            <ul>
+                <li>Posted Components: <strong></strong></li>
+                <li>Projects Submitted: <strong></strong></li>
+                <li>Items Purchased: <strong></strong></li>
+            </ul>
+        </div>
+
+        <div class="card">
+            <h2>⚡ Quick Actions</h2>
+            <a href="/store" class="btn">Go to Store</a>
+            <a href="/projects" class="btn">Submit a Project</a>
+            <a href="/recycle" class="btn">Start Recycling</a>
+        </div>
+
+        <div class="card">
+            <h2>📈 Progress</h2>
+            <p>You’ve contributed to saving <strong>18 kg</strong> of e-waste so far. Keep going! 🌱</p>
+        </div>
+    </div>
+</body>
+</html>

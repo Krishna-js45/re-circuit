@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Explore Items - ReCircuit</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}">
+</head>
+<body>
+    <!-- Navbar -->
+    <div class="navbar">
+        <a href="/">Home</a>
+        <a href="/store">Store</a>
+        <a href="/projects">Projects</a>
+        <a href="/login">Login</a>
+        <a href="/dashboard">Dashboard</a>
+        <a href="/cart" id="cartLink">Cart (<span id="cartCount">0</span>)</a>
+    </div>
+
+   <!-- Main Content -->
+<div class="container">
+    <h1>🔍 Explore Reusable E-Waste Components</h1>
+    <p>Browse and select reusable components from e-waste for your next project. These parts are perfect for students exploring sustainable engineering solutions. Discover eco-friendly options and contribute to a greener future.</p>
+    
+    <!-- Explore Items Grid -->
+    <div class="explore-items-grid">
+        <!-- Item 1: Resistor -->
+        <div class="item-card">
+            
+
+            <h3>Resistor</h3>
+            <p>Resistors are essential for controlling current flow in circuits. Perfect for prototyping and basic electronic projects.</p>
+            <button class="btn">Add to Cart</button>
+        </div>
+        
+        <!-- Item 2: Capacitor -->
+        <div class="item-card">
+            
+            <h3>Capacitor</h3>
+            <p>Capacitors store electrical energy and help in filtering power supplies. Great for creating energy-efficient designs.</p>
+            <button class="btn">Add to Cart</button>
+        </div>
+        
+        <!-- Item 3: Diode -->
+        <div class="item-card">
+            
+            <h3>Diode</h3>
+            <p>Diodes are essential for controlling current direction in circuits. Ideal for signal control and rectification.</p>
+            <button class="btn">Add to Cart</button>
+        </div>
+
+        <!-- Item 4: Transistor -->
+        <div class="item-card">
+            
+            <h3>Transistor</h3>
+            <p>Transistors act as electronic switches and amplifiers. Vital for building logic circuits and amplifying signals.</p>
+            <button class="btn">Add to Cart</button>
+        </div>
+        
+        <!-- Item 5: IC Chips -->
+        <div class="item-card">
+            
+            <h3>IC Chips</h3>
+            <p>Integrated Circuit (IC) chips are key components in modern electronics, used for various applications like microcontrollers and logic gates.</p>
+            <button class="btn">Add to Cart</button>
+        </div>
+        
+        <!-- Item 6: Battery -->
+        <div class="item-card">
+            
+            <h3>Battery</h3>
+            <p>Batteries are essential for portable devices. We offer reusable battery packs from e-waste, ideal for DIY projects.</p>
+            <button class="btn">Add to Cart</button>
+        </div>
+        
+        <!-- Item 7: Connectors -->
+        <div class="item-card">
+            
+            <h3>Connectors</h3>
+            <p>Connectors are important for establishing electrical connections in circuits. A must-have for any electronics project.</p>
+            <button class="btn">Add to Cart</button>
+        </div>
+    </div>
+</div>
+
+
+</body>
+</html>
